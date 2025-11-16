@@ -1,0 +1,175 @@
+/* App 组件样式 */
+
+.app-layout {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  transition: var(--transition-base);
+}
+
+/* Header 样式 */
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-lg);
+  background-color: var(--bg-container);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: var(--transition-base);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.app-header .logo {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 600;
+  margin-right: var(--spacing-xl);
+  white-space: nowrap;
+}
+
+/* Content 样式 */
+.app-content {
+  min-height: calc(100vh - 64px - 70px); /* 减去 header 和 footer 高度 */
+  padding: var(--spacing-lg);
+  background-color: var(--bg-color);
+  transition: var(--transition-base);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(120, 119, 198, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 119, 198, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(120, 219, 255, 0.03) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(255, 219, 120, 0.03) 0px, transparent 50%);
+}
+
+[data-theme='dark'] .app-content {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(120, 119, 198, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(255, 119, 198, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(120, 219, 255, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(255, 219, 120, 0.05) 0px, transparent 50%);
+}
+
+/* Footer 样式 */
+.app-footer {
+  text-align: center;
+  background-color: var(--bg-container);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-md) var(--spacing-lg);
+  transition: var(--transition-base);
+  color: var(--text-secondary);
+}
+
+/* 卡片样式 */
+.card {
+  background-color: var(--bg-container);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: var(--transition-base);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* 页面容器 */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--text-color);
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* 按钮组 */
+.button-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* 加载状态 */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* 空状态 */
+.empty-container {
+  text-align: center;
+  padding: var(--spacing-xxl);
+  color: var(--text-secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .app-header .logo {
+    font-size: 18px;
+    margin-right: var(--spacing-md);
+  }
+  
+  .app-content {
+    padding: var(--spacing-md);
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+  
+  .page-container {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .app-content {
+    padding: var(--spacing-sm);
+  }
+  
+  .page-title {
+    font-size: 20px;
+  }
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 主题切换按钮样式已移至 ThemeToggle.css */
+
